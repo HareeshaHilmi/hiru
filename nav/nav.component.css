@@ -1,0 +1,14 @@
+.navbar-nav{
+    margin-left: 1300px;
+
+}
+
+.nav-link{
+    font-size: 20px;
+    font-family:'Crete-Round', serif;
+}
+
+.navbar{
+    size: 200px;
+    background-color:gray; 
+}

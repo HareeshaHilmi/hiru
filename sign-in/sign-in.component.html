@@ -1,0 +1,285 @@
+
+<div class="body">
+<div class = "row second">
+  
+<div class = "col-md-4 text-center">
+<button class="btn btn-primary" (click)="signInCustomer()"><i class="fas fa-magic mr-1"></i>Sign in As Customer</button>
+</div>
+<div class = "col-md-18 text-center">
+  <button class="btn btn-primary" (click)="signInTechnician()"><i class="fas fa-magic mr-1"></i>Sign in As Technician</button>
+  </div>
+<div class="col-md-4 text-center">
+<button class="btn btn-primary" (click)="signInManager()"><i class="fas fa-magic ml-1"></i>Sign in As receptionist</button>
+</div>
+</div>
+
+<br><br>
+
+<div *ngIf = "SignInAsCustomer">
+    <mat-card class="sign">
+            <form class = "form-signIn" #f="ngForm" (ngSubmit)="signInASCustomer(f.value)"  [formGroup]="Customerform">
+                <mat-card-header>
+              <h1 class="h3 mb-3 font-weight-normal"> Sign in</h1>
+                </mat-card-header>
+             <!-- <label for="firstName">First Name</label>-->
+              <input
+                formControlName="firstName"
+                 type="text"
+                 id="firstName"
+                 class="form-control"
+                 placeholder="Enter First Name">
+                 <div
+                 *ngIf="Customerform.get('firstName').touched && Customerform.get('firstName').invalid" class="alert alert-danger"
+                 >
+                 First Name Required!
+                </div>
+              <br>
+              <!--<label for="lastName" class="sr-only">Last Name</label>-->
+              <input
+                formControlName="lastName"
+                 type="text"
+                 id="secondName"
+                 class="form-control"
+                 placeholder="Enter Last Name">
+                 <div
+                 *ngIf="Customerform.get('lastName').touched && Customerform.get('lastName').invalid" class="alert alert-danger"
+                 >
+                 Last Name Required!
+                </div>
+              <br>
+              <!---<label
+                 for="inputEmail" class="sr-only">Email address</label>-->
+              <input
+                formControlName="email"
+                 type="email"
+                 id="email"
+                 class="form-control"
+                 placeholder="Email address">
+                 <div *ngIf = "Customerform.get('email').touched && Customerform.get('email').invalid"class="alert alert-danger">
+                        <span *ngIf="Customerform.hasError('email', 'email')&&Customerform.get('email').touched">
+                          This email not valid.
+                         </span>
+                         Enter the E-mail
+                       </div>
+              <br>
+
+              
+              <!--<label for="inputPassword">Password</label>-->
+              <input
+              formControlName="password"
+                 type="password"
+                 id="inputPassword"
+                 class="form-control"
+                 placeholder="Password">
+                 <div
+                 *ngIf="Customerform.get('password').touched && Customerform.get('password').invalid" class="alert alert-danger"
+                 >
+                       Password is Required!
+                 </div>
+              <br>
+              <!--<label for="Re Enter The Password">Password</label>-->
+              <input
+              formControlName="repassword"
+                 type="password"
+                 id="inputPassword"
+                 class="form-control"
+                 placeholder="Re Enter The Password">
+              <br>
+              <div
+              *ngIf="Customerform.get('repassword').touched && Customerform.get('repassword').invalid" class="alert alert-danger"
+              >
+                    RePassword is Required!
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            
+            </form>
+
+      </mat-card>
+</div>
+
+<div *ngIf = "SignInAsManager">
+    <mat-card class="sign">
+            <form class = "form-signIn" #f="ngForm" (ngSubmit)="signInAsManagerr(f.value)"  [formGroup]="Managerform">
+                <mat-card-header>
+              <h1 class="h3 mb-3 font-weight-normal">Restaurant Owner Login</h1>
+                </mat-card-header>
+                <br>
+                <label
+                for="restaurantName" class="sr-only">Restaurant Name</label>
+             <input
+               formControlName="restaurantName"
+                type="restaurantName"
+                id="restaurantName"
+                class="form-control"
+                placeholder="Restaurant Name">
+                <div *ngIf = "Customerform.get('restaurantName').touched && Customerform.get('restaurantName').invalid"class="alert alert-danger">
+                        Enter the Restaurant Name
+                      </div>
+             <br>
+
+              <label for="firstName">First Name</label>
+              <input
+                formControlName="firstName"
+                 type="text"
+                 id="firstName"
+                 class="form-control"
+                 placeholder="Enter First Name">
+                 <div
+                 *ngIf="Customerform.get('firstName').touched && Customerform.get('firstName').invalid" class="alert alert-danger"
+                 >
+                 First Name Required!
+                </div>
+              <br>
+              <label for="lastName" class="sr-only">Last Name</label>
+              <input
+                formControlName="lastName"
+                 type="text"
+                 id="secondName"
+                 class="form-control"
+                 placeholder="Enter Last Name">
+                 <div
+                 *ngIf="Customerform.get('lastName').touched && Customerform.get('lastName').invalid" class="alert alert-danger"
+                 >
+                 Last Name Required!
+                </div>
+              <br>
+              <label
+                 for="inputEmail" class="sr-only">Email address</label>
+              <input
+                formControlName="email"
+                 type="email"
+                 id="email"
+                 class="form-control"
+                 placeholder="Email address">
+                 <div *ngIf = "Customerform.get('email').touched && Customerform.get('email').invalid"class="alert alert-danger">
+                        <span *ngIf="Customerform.hasError('email', 'email')&&Customerform.get('email').touched">
+                          This email not valid.
+                         </span>
+                         Enter the E-mail
+                       </div>
+              <br>
+
+              
+              <label for="inputPassword">Password</label>
+              <input
+              formControlName="password"
+                 type="password"
+                 id="inputPassword"
+                 class="form-control"
+                 placeholder="Password">
+                 <div
+                 *ngIf="Customerform.get('password').touched && Customerform.get('password').invalid" class="alert alert-danger"
+                 >
+                       Password is Required!
+                 </div>
+              <br>
+              <label for="Re Enter The Password">Password</label>
+              <input
+              formControlName="repassword"
+                 type="password"
+                 id="inputPassword"
+                 class="form-control"
+                 placeholder="Re Enter The Password">
+              <br>
+              <div
+              *ngIf="Customerform.get('repassword').touched && Customerform.get('repassword').invalid" class="alert alert-danger"
+              >
+                    RePassword is Required!
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+              
+            </form>
+
+      </mat-card>
+</div>
+
+</div>
+
+
+
+
+
+<div *ngIf = "SignInAsTechnician">
+    <mat-card class="sign">
+            <form class = "form-signIn" #f="ngForm" (ngSubmit)="signInASTechnician(f.value)"  [formGroup]="Technicianform">
+                <mat-card-header>
+              <h1 class="h3 mb-3 font-weight-normal"> Sign in</h1>
+                </mat-card-header>
+             <!-- <label for="firstName">First Name</label>-->
+              <input
+                formControlName="firstName"
+                 type="text"
+                 id="firstName"
+                 class="form-control"
+                 placeholder="Enter First Name">
+                 <div
+                 *ngIf="Technicianform.get('firstName').touched && Technicianform.get('firstName').invalid" class="alert alert-danger"
+                 >
+                 First Name Required!
+                </div>
+              <br>
+              <!--<label for="lastName" class="sr-only">Last Name</label>-->
+              <input
+                formControlName="lastName"
+                 type="text"
+                 id="secondName"
+                 class="form-control"
+                 placeholder="Enter Last Name">
+                 <div
+                 *ngIf="Technicianform.get('lastName').touched && Technicianform.get('lastName').invalid" class="alert alert-danger"
+                 >
+                 Last Name Required!
+                </div>
+              <br>
+              <!---<label
+                 for="inputEmail" class="sr-only">Email address</label>-->
+              <input
+                formControlName="email"
+                 type="email"
+                 id="email"
+                 class="form-control"
+                 placeholder="Email address">
+                 <div *ngIf = "Technicianform.get('email').touched && Technicianform.get('email').invalid"class="alert alert-danger">
+                        <span *ngIf="Technicianform.hasError('email', 'email')&&Technicianform.get('email').touched">
+                          This email not valid.
+                         </span>
+                         Enter the E-mail
+                       </div>
+              <br>
+
+              
+              <!--<label for="inputPassword">Password</label>-->
+              <input
+              formControlName="password"
+                 type="password"
+                 id="inputPassword"
+                 class="form-control"
+                 placeholder="Password">
+                 <div
+                 *ngIf="Technicianform.get('password').touched && Technicianform.get('password').invalid" class="alert alert-danger"
+                 >
+                       Password is Required!
+                 </div>
+              <br>
+              <!--<label for="Re Enter The Password">Password</label>-->
+              <input
+              formControlName="repassword"
+                 type="password"
+                 id="inputPassword"
+                 class="form-control"
+                 placeholder="Re Enter The Password">
+              <br>
+              <div
+              *ngIf="Technicianform.get('repassword').touched && Technicianform.get('repassword').invalid" class="alert alert-danger"
+              >
+                    RePassword is Required!
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            
+            </form>
+
+      </mat-card>
+</div>

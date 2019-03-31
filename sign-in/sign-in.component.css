@@ -1,0 +1,17 @@
+.sign{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.body {
+    background-image: url('../../assets/images/SignIn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: auto;
+    height: 700px;
+    align-items: center;
+    align-content: center;
+}
+

@@ -1,0 +1,16 @@
+.body {
+    background-image: url('../../assets/images/home1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: auto;
+    height: 700px;
+    align-items: center;
+    align-content: center;
+}
+
+.card{
+    width:400px;
+    height:300px;
+}

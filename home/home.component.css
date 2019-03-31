@@ -1,0 +1,21 @@
+.body {
+    background-image: url('../../assets/images/home_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: auto;
+    height: 650px;
+    align-items: center;
+    align-content: center;
+}
+
+.heading{
+    font-family:'Crete-Round', serif;
+    font-weight: 1000px;
+    font-size: 100px;
+    color: rgb(252, 252, 252);
+    margin-left:200px;
+   
+}
+
